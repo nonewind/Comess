@@ -1,7 +1,7 @@
 <!--
  * @Author: Ziheng
  * @Date: 2021-08-27 17:20:14
- * @LastEditTime: 2021-08-27 17:29:22
+ * @LastEditTime: 2021-08-27 17:35:32
 -->
 
 ### Wecom酱 - Python 版本
@@ -20,3 +20,5 @@
 #### 食用方法
 - 所有的教程均按照[腾讯云函数搭建:腾讯云云函数部署Server酱📣](https://github.com/easychen/wecomchan/tree/main/go-scf) 这个进行
 - 唯一需要注意的一点 就是在上传代码那部分 使用 [index.py](https://github.com/nonewind/Comess/blob/master/index.py)
+#### 请求URL示例
+- https://xxxxxxxxxxx/release/none_woo?text=你的消息内容
