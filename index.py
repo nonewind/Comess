@@ -1,7 +1,7 @@
 '''
 Author: Ziheng
 Date: 2021-08-27 17:13:27
-LastEditTime: 2021-08-28 09:04:17
+LastEditTime: 2021-08-28 10:07:25
 '''
 # -*- coding: utf8 -*-
 import json
@@ -56,7 +56,9 @@ def send_to_wecom(text, wecom_cid, wecom_aid, wecom_secret, wecom_touid='@all'):
             "text": {
                 "content": text
             },
-            "duplicate_check_interval": 600
+            # 半小时内消息重复消息不允许推送
+            "enable_duplicate_check": 1,
+            "duplicate_check_interval": 1800
         }
         # response = requests.post(send_msg_url, data=json.dumps(data)).context
         # return response
