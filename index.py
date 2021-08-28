@@ -1,7 +1,7 @@
 '''
 Author: Ziheng
 Date: 2021-08-27 17:13:27
-LastEditTime: 2021-08-27 17:13:30
+LastEditTime: 2021-08-28 09:04:17
 '''
 # -*- coding: utf8 -*-
 import json
@@ -27,10 +27,13 @@ def main_handler(event, context):
         }
         return data
     # WECOM_TOUID:for :: 发送给谁 默认全部人
-    WECOM_TOUID = event.get("for", "@all")
+    try:
+        WECOM_TOUID = event.getevent.get("queryString").get("for","@all")
+    except:
+        WECOM_TOUID = "@all"
     return_data = send_to_wecom(text=test, wecom_cid=WECOM_CID, wecom_aid=weComAId,
                                 wecom_secret=WECOM_SECRET, wecom_touid=WECOM_TOUID)
-    data_body = json.dumps({"sug": "sucess", "data": return_data})
+    data_body = json.dumps({"sug": "sucess", "data": return_data,"query":{"text":test,"for":WECOM_TOUID}})
     data = {
         "isBase64Encoded": False,
         "statusCode": 200,
@@ -61,3 +64,4 @@ def send_to_wecom(text, wecom_cid, wecom_aid, wecom_secret, wecom_touid='@all'):
         return response.text
     else:
         return False
+
