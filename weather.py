@@ -1,7 +1,7 @@
 '''
 Author: Ziheng
 Date: 2021-08-27 11:57:44
-LastEditTime: 2021-08-28 11:35:03
+LastEditTime: 2021-08-28 18:02:30
 '''
 # -*- coding: utf8 -*-
 import requests, json,datetime
@@ -37,7 +37,10 @@ def index():
     # 星期x
     dayOfWeek =week_dict[str(datetime.datetime.now().isoweekday())]
     # 天气消息提示
-    is_unbrala = req['data']['tips']['forecast_24h']["0"]
+    try:
+        is_unbrala = req['data']['tips']['forecast_24h']["0"]
+    except:
+        is_unbrala = req['data']['tips']['observe']['0']
     # 未来天气详细
     all_www = ''
     for line in all_data:
@@ -51,7 +54,7 @@ def index():
 
     # 消息推送
     requests.get(
-        f"https://service-e5pbfglh-1259049233.sh.apigw.tencentcs.com/release/none_woo?text={pushMess_push_will}"
+        f"https://service-e5pbfglh-1259049233.sh.apigw.tencentcs.com/release/none_woo?text={pushMess_push_will}&userID=zhangziheng"
     )
 
 if __name__ == "__main__":
