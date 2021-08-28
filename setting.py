@@ -1,7 +1,0 @@
-'''
-Author: Ziheng
-Date: 2021-08-28 09:29:18
-LastEditTime: 2021-08-28 09:29:19
-'''
-
-GD_API_TOKEN = "84405341aad5dd79791a1a0c0d173034"

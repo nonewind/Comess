@@ -1,7 +1,7 @@
 <!--
  * @Author: Ziheng
  * @Date: 2021-08-27 17:20:14
- * @LastEditTime: 2021-08-27 17:35:32
+ * @LastEditTime: 2021-08-28 11:37:00
 -->
 
 ### Wecom酱 - Python 版本
@@ -15,7 +15,7 @@
 - request 需要自己在云函数提供的云编辑器里安装 或者 采用云函数官方的SDK
 #### 复刻进度
 - [x] 按照原项目文档 已经成功走了一遍
-- [ ] 修复无法发送转义字符 \r \n 的问题
+- [x] 修复无法发送转义字符 \r \n 的问题
 
 #### 食用方法
 - 所有的教程均按照[腾讯云函数搭建:腾讯云云函数部署Server酱📣](https://github.com/easychen/wecomchan/tree/main/go-scf) 这个进行
