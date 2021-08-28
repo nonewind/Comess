@@ -1,7 +1,7 @@
 '''
 Author: Ziheng
 Date: 2021-08-27 17:13:27
-LastEditTime: 2021-08-28 10:07:25
+LastEditTime: 2021-08-28 14:15:38
 '''
 # -*- coding: utf8 -*-
 import json
@@ -27,8 +27,9 @@ def main_handler(event, context):
         }
         return data
     # WECOM_TOUID:for :: 发送给谁 默认全部人
+    # userID :: 企业微信中查询到的用户ID 传递为全小写
     try:
-        WECOM_TOUID = event.getevent.get("queryString").get("for","@all")
+        WECOM_TOUID = event.get("queryString").get("userID","@all").lower()
     except:
         WECOM_TOUID = "@all"
     return_data = send_to_wecom(text=test, wecom_cid=WECOM_CID, wecom_aid=weComAId,
